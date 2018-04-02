@@ -5,8 +5,8 @@ class fact(object):
 
     def __init__(self, name):
         self.name = name
-        self.conc = []
-        self.implies = []
+        self.on = False
+        self.rule = []
 
 def start():
     file_name = sys.argv[1]
