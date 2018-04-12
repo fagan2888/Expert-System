@@ -25,8 +25,8 @@ def manage_stack(letter, ipn, stack):
 def create_ipn(elements):
     ipn = []
     stack = []
-    for idx, word in enumerate(elements):
-        for letter in word:
+    for idx_word, word in enumerate(elements):
+        for idx_letter, letter in enumerate(word):
             if 'A' <= letter <= 'Z':
                 ipn.append(letter)
             elif letter in ['(', ')', '+', '|', '^', '!']:
@@ -34,5 +34,4 @@ def create_ipn(elements):
             else:
                 while stack:
                     ipn.append(stack.pop())
-                return ipn, idx
-    return ipn
+                return idx_word, idx_letter, ipn
