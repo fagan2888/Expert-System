@@ -1,5 +1,3 @@
-import sys
-
 class Fact(object):
     def __init__(self, name, ipn):
         self.name = name
@@ -23,10 +21,10 @@ def find_operator(ipn_conc):
     return None
 
 
-def complex_conclusion(facts, ipn_stat, ipn_con, idx_ope):
+def complex_conclusion(facts, ipn_stat, ipn_conc, idx_ope):
     while idx_ope:
-        if ipn_con[idx_ope] == '+' and idx_ope > 1:
-            
+        if ipn_conc[idx_ope] == '+' and idx_ope > 1:
+           print('Test')
         if len(ipn_conc) >= idx_ope:
             idx_ope = find_operator(ipn_conc[idx_ope:])
 

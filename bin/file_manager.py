@@ -1,6 +1,6 @@
 import sys
-import shunting_yard
-import facts_manager
+import bin.shunting_yard as shunting_yard
+import bin.facts_manager as facts_manager
 
 
 def find_errors(elements, ipn, line_nb):

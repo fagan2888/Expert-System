@@ -1,20 +1,10 @@
 import sys
-import logging
-import file_manager
-
-
-logging.basicConfig(filename='info.txt', level=logging.DEBUG)
-
-
-
-
-
-
+import bin.file_manager as file_man
 
 
 def start():
-    fd = file_manager.open_file(sys.argv)
-    file_manager.parse_file(fd)
+    fd = file_man.open_file(sys.argv)
+    file_man.parse_file(fd)
 
 
 if __name__ == "__main__":
