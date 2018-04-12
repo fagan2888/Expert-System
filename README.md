@@ -22,11 +22,11 @@ The following symbols are defined, in order of decreasing priority:
 
 - <=> which means "if and only if". Example : A + B <=> C
 
-- ? stands for the query
+- '?' stands for the query
 
-- = stands for the initial fact
+- '=' stands for the initial fact
 
-- # opens a commentary
+- '#' opens a commentary
 
 ## Example
 
