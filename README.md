@@ -8,19 +8,19 @@ The program accept one parameter, which is the input file. It will contain a lis
 
 The following symbols are defined, in order of decreasing priority:
 
-- ( and ) which are fairly obvious. Example : A + (B | C) => D
+- '(' and ')' which are fairly obvious. Example : A + (B | C) => D
 
--! which means NOT. Example : !B
+- '!' which means NOT. Example : !B
 
-- + which means AND. Example : A + B
+- '+' which means AND. Example : A + B
 
-- | which means OR. Example : A | B
+- '|' which means OR. Example : A | B
 
-- ˆ which means XOR. Example : A ˆ B
+- 'ˆ' which means XOR. Example : A ˆ B
 
-- => which means "implies". Example : A + B => C
+- '=>' which means "implies". Example : A + B => C
 
-- <=> which means "if and only if". Example : A + B <=> C
+- '<=>' which means "if and only if". Example : A + B <=> C
 
 - '?' stands for the query
 
