@@ -1,4 +1,4 @@
-C => E # C implies E
+C => E#
 A + B + C => D # A and B and C implies D
 A | B => C # A or B implies C
 A + !B => F # A and not B implies F
@@ -13,5 +13,5 @@ A + B <=> !C # A and B if and only if noC
 =ABG # Initial facts : A, B and G are true. All others are false.
 # If no facts are initially true, then a simple "=" followed
 # by a newline is used
-A + B= C
+A + B=> C
 ?GVX # Queries : What are G, V and X ?

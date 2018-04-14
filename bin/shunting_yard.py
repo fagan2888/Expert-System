@@ -35,3 +35,4 @@ def create_ipn(elements):
                 while stack:
                     ipn.append(stack.pop())
                 return idx_word, idx_letter, ipn
+    return len(elements), 0, ipn
