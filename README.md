@@ -2,25 +2,25 @@
 
 An expert system for propositional calculus. 
 
-The program accept one parameter, which is the input file. It will contain a list of rules, then a list of initial facts, then a list of queries. For each of these queries, the programmust, given the facts and rules given, tell if the query is true, false, or undetermined.
+The program accepts one parameter, which is the input file. It will contain a list of rules, a list of initial facts and a list of queries. For each of these queries, the program will tell if the fact is true, false, or undetermined.
 
 ## Symbols
 
 The following symbols are defined, in order of decreasing priority:
 
-- '(' and ')' which are fairly obvious. Example : A + (B | C) => D
+- '(' and ')' work like normal parentheses . Example : A + (B | C) => D
 
-- '!' which means NOT. Example : !B
+- '!' means NOT. Example : !B
 
-- '+' which means AND. Example : A + B
+- '+' means AND. Example : A + B
 
-- '|' which means OR. Example : A | B
+- '|' means OR. Example : A | B
 
-- 'ˆ' which means XOR. Example : A ˆ B
+- 'ˆ' means XOR. Example : A ˆ B
 
-- '=>' which means "implies". Example : A + B => C
+- '=>' means "implies". Example : A + B => C
 
-- '<=>' which means "if and only if". Example : A + B <=> C
+- '<=>' means "if and only if". Example : A + B <=> C
 
 - '?' stands for the query
 
