@@ -8,13 +8,14 @@ def get_nodes(ipn):
     if len(ipn) == 1:
         return ipn[0]
     facts = []
+    buf = []
     while len(ipn) > 1:
         for idx, elem in enumerate(ipn):
             if elem == '+':
-                g_oper.addition(ipn, idx, facts)
+                g_oper.addition(ipn, idx, facts, buf)
                 break
             elif elem == '!':
-                g_oper.negation(ipn, idx, facts)
+                g_oper.negation(ipn, idx, facts, buf)
                 break
             elif elem in ['|', '^']:
                 print('Operator \'|\' and \'^\' is not supported in conclusions')
@@ -79,20 +80,17 @@ def update_edges(facts, graph, ipn_stat, ipn_conc):
 
 
 def update_graph(elem, facts, graph, ipn_condition):
-    condition = 0
-    if elem[0][0:2] == '=>':
-        condition = 2
-    elif elem[0][0:3] == '<=>':
-        condition = 3
-    if len(elem[0]) > condition:
-        elem[0] = elem[0][condition:]
-    else:
-        del elem[0]
-    idx_word, idx_letter, ipn_conclusion = shunting_yard.create_ipn(elem)
+    bidirect = False
+    if elem[0:2] == ['=', '>']:
+        elem = elem[2:]
+    elif elem[0:3] == ['<' '=', '>']:
+        elem = elem[3:]
+        bidirect = True
+    letter, new_elems, ipn_conclusion = shunting_yard.create_ipn(elem)
     if not ipn_conclusion:
         return False
-    if len(elem) > idx_word and elem[idx_word][idx_letter] != '#':
+    if letter and letter != '#':
         return False
-    if condition == 3 and not update_edges(facts, graph, ipn_conclusion.copy(), ipn_condition.copy()):
+    if bidirect and not update_edges(facts, graph, ipn_conclusion.copy(), ipn_condition.copy()):
         return False
     return update_edges(facts, graph, ipn_condition, ipn_conclusion)

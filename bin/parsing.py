@@ -17,14 +17,12 @@ def parse_ipn(facts, ipn):
 
 
 def get_condition(elements):
-    idx_word, idx_letter, ipn_condition = shunting_yard.create_ipn(elements)
+    last, new_elems, ipn_condition = shunting_yard.create_ipn(elements)
     if not ipn_condition:
         return None, None
-    del elements[0:idx_word]
-    elements[0] = elements[0][idx_letter:]
-    if elements[0][0] not in ['<', '=']:
+    if new_elems[0] not in ['<', '=']:
         return None, None
-    return elements, ipn_condition
+    return new_elems, ipn_condition
 
 
 def get_queries_init(elements, facts):
